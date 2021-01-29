@@ -215,7 +215,7 @@ void loop() {
     pServer->connect(foundDevice.getAddress());    
   }
 
-  if(loop_count%60 == 0)  // check for time once a day.
+  if(loop_count%14400 == 0)  // check for time once a day.( 1 scan is 5 sec, + 1 sec delay = 6 seconds. (86400s/day) / 6 = 14400
   {
    if (eth_connected) { 
       if(!NTPtimeClient.update()){
